@@ -9,4 +9,7 @@ archives/
 data/
 
 *.tsbuildinfo
-*/.claude/settings.local.json
+
+# Claude Code
+.claude/
+**/.claude/
