@@ -1,0 +1,14 @@
+{
+  "name": "mordor-basic",
+  "private": true,
+  "type": "module",
+  "version": "0.0.1",
+  "description": "Basic ECNS SDK example for Mordor testnet",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "@ecnsdomains/ecnsjs": "workspace:*",
+    "viem": "^2.30.6"
+  }
+}
