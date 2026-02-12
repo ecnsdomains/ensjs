@@ -7,7 +7,7 @@
     "start": "ts-node-esm src/index.ts"
   },
   "dependencies": {
-    "@ensdomains/ensjs": "workspace:*",
+    "@ecnsdomains/ecnsjs": "workspace:*",
     "ts-node": "^10.9.2",
     "typescript": "^5.6.2",
     "viem": "^2.30.6"

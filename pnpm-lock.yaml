@@ -48,7 +48,7 @@ importers:
 
   examples/basic-esm:
     dependencies:
-      '@ensdomains/ensjs':
+      '@ecnsdomains/ecnsjs':
         specifier: workspace:*
         version: link:../../packages/ensjs
       viem:
@@ -57,7 +57,7 @@ importers:
 
   examples/basic-tsnode-esm:
     dependencies:
-      '@ensdomains/ensjs':
+      '@ecnsdomains/ecnsjs':
         specifier: workspace:*
         version: link:../../packages/ensjs
       ts-node:
@@ -184,7 +184,7 @@ importers:
 
   packages/react:
     dependencies:
-      '@ensdomains/ensjs':
+      '@ecnsdomains/ecnsjs':
         specifier: workspace:*
         version: link:../ensjs
     devDependencies:

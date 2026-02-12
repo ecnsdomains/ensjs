@@ -1,7 +1,7 @@
 {
-  "name": "@ensdomains/ensjs",
+  "name": "@ecnsdomains/ecnsjs",
   "version": "4.2.2",
-  "description": "ENS javascript library for contract interaction",
+  "description": "ECNS javascript library for contract interaction",
   "type": "module",
   "types": "./dist/index.d.ts",
   "typings": "./dist/index.d.ts",
@@ -65,7 +65,7 @@
     "!src/**/*.test.ts",
     "!src/test"
   ],
-  "repository": "git@github.com:ensdomains/ensjs.git",
+  "repository": "git@github.com:ecnsdomains/ecnsjs.git",
   "author": "TateB <yo@taytems.xyz>",
   "license": "MIT",
   "scripts": {

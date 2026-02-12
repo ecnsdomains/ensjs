@@ -7,7 +7,7 @@
     "start": "node src/index.js"
   },
   "dependencies": {
-    "@ensdomains/ensjs": "workspace:*",
+    "@ecnsdomains/ecnsjs": "workspace:*",
     "viem": "^2.30.6"
   }
 }

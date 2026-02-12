@@ -1,7 +1,7 @@
 {
-  "name": "@ensdomains/ensjs-react",
+  "name": "@ecnsdomains/react",
   "version": "0.0.6",
-  "description": "ENS javascript library for contract interaction",
+  "description": "ECNS React hooks for contract interaction",
   "type": "module",
   "types": "./dist/types/index.d.ts",
   "typings": "./dist/types/index.d.ts",
@@ -16,7 +16,7 @@
     "!src/**/*.test.ts",
     "!src/test"
   ],
-  "repository": "git@github.com:ensdomains/ensjs.git",
+  "repository": "git@github.com:ecnsdomains/ecnsjs.git",
   "author": "Lucemans <luc@lucemans.nl>",
   "license": "MIT",
   "scripts": {
@@ -24,7 +24,7 @@
     "build": "tsc --project tsconfig.build.json"
   },
   "dependencies": {
-    "@ensdomains/ensjs": "workspace:*"
+    "@ecnsdomains/ecnsjs": "workspace:*"
   },
   "devDependencies": {
     "@ensdomains/buffer": "^0.1.1",
