@@ -1,6 +1,6 @@
 import type { Address, Hex } from 'viem'
 import { afterEach, beforeAll, beforeEach, expect, it } from 'vitest'
-import { ethRegistrarControllerCommitmentsSnippet } from '../../contracts/ethRegistrarController.js'
+import { registrarControllerCommitmentsSnippet } from '../../contracts/registrarController.js'
 import { getChainContractAddress } from '../../contracts/getChainContractAddress.js'
 import {
   publicClient,
@@ -47,7 +47,7 @@ it('should return a commit transaction and succeed', async () => {
   expect(receipt.status).toBe('success')
 
   const commitment = await publicClient.readContract({
-    abi: ethRegistrarControllerCommitmentsSnippet,
+    abi: registrarControllerCommitmentsSnippet,
     functionName: 'commitments',
     address: getChainContractAddress({
       client: publicClient,

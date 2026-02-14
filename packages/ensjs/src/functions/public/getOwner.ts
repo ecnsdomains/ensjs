@@ -14,7 +14,7 @@ import {
   type OwnerContract,
   ownerFromContract,
 } from '../../utils/ownerFromContract.js'
-import { checkIsDotEth } from '../../utils/validation.js'
+import { checkIsNativeTld2LD } from '../../utils/validation.js'
 import multicallWrapper from './multicallWrapper.js'
 
 export type GetOwnerParameters<
@@ -101,7 +101,7 @@ const encode = <TContract extends OwnerContract | undefined = undefined>(
 
   const data: { to: Address; data: Hex }[] = [registryData, nameWrapperData]
 
-  if (checkIsDotEth(labels)) {
+  if (checkIsNativeTld2LD(labels)) {
     data.push(ownerFromContract({ client, contract: 'registrar', labels }))
   }
 

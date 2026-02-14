@@ -1,8 +1,9 @@
+import { DEFAULT_BRAND_CONFIG } from '../config.js'
 import {
   NameWithEmptyLabelsError,
   RootNameIncludesOtherLabelsError,
 } from '../errors/utils.js'
-import { MINIMUM_DOT_ETH_CHARS } from './consts.js'
+import { MINIMUM_NATIVE_TLD_CHARS } from './consts.js'
 import { checkLabel, isEncodedLabelhash, saveName } from './labels.js'
 import { type Label, normalise, split } from './normalise.js'
 
@@ -29,11 +30,14 @@ export type ParsedInputResult = {
   isValid: boolean
   isShort: boolean
   is2LD: boolean
-  isETH: boolean
+  isNativeTld: boolean
   labelDataArray: Label[]
 }
 
-export const parseInput = (input: string): ParsedInputResult => {
+export const parseInput = (
+  input: string,
+  { nativeTld = DEFAULT_BRAND_CONFIG.tld } = {},
+): ParsedInputResult => {
   let nameReference = input
   let isValid = false
 
@@ -46,10 +50,10 @@ export const parseInput = (input: string): ParsedInputResult => {
 
   const labels = nameReference.split('.')
   const tld = labels[labels.length - 1]
-  const isETH = tld === 'eth'
+  const isNativeTld = tld === nativeTld
   const labelDataArray = split(nameReference)
   const isShort =
-    (labelDataArray[0].output?.length || 0) < MINIMUM_DOT_ETH_CHARS
+    (labelDataArray[0].output?.length || 0) < MINIMUM_NATIVE_TLD_CHARS
 
   if (labels.length === 1) {
     return {
@@ -58,7 +62,7 @@ export const parseInput = (input: string): ParsedInputResult => {
       isShort,
       isValid,
       is2LD: false,
-      isETH,
+      isNativeTld,
       labelDataArray,
     }
   }
@@ -67,13 +71,18 @@ export const parseInput = (input: string): ParsedInputResult => {
   return {
     type: 'name',
     normalised: normalisedName,
-    isShort: isETH && is2LD ? isShort : false,
+    isShort: isNativeTld && is2LD ? isShort : false,
     isValid,
     is2LD,
-    isETH,
+    isNativeTld,
     labelDataArray,
   }
 }
 
-export const checkIsDotEth = (labels: string[]) =>
-  labels.length === 2 && labels[1] === 'eth'
+export const checkIsNativeTld2LD = (
+  labels: string[],
+  tld = DEFAULT_BRAND_CONFIG.tld,
+) => labels.length === 2 && labels[1] === tld
+
+/** @deprecated Use checkIsNativeTld2LD */
+export const checkIsDotEth = checkIsNativeTld2LD

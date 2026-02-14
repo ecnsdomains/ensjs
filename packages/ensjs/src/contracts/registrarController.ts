@@ -1,4 +1,4 @@
-export const ethRegistrarControllerErrors = [
+export const registrarControllerErrors = [
   {
     inputs: [
       {
@@ -112,8 +112,8 @@ export const ethRegistrarControllerErrors = [
   },
 ] as const
 
-export const ethRegistrarControllerRentPriceSnippet = [
-  ...ethRegistrarControllerErrors,
+export const registrarControllerRentPriceSnippet = [
+  ...registrarControllerErrors,
   {
     inputs: [
       {
@@ -152,8 +152,8 @@ export const ethRegistrarControllerRentPriceSnippet = [
   },
 ] as const
 
-export const ethRegistrarControllerMakeCommitmentSnippet = [
-  ...ethRegistrarControllerErrors,
+export const registrarControllerMakeCommitmentSnippet = [
+  ...registrarControllerErrors,
   {
     inputs: [
       {
@@ -217,8 +217,8 @@ export const ethRegistrarControllerMakeCommitmentSnippet = [
   },
 ] as const
 
-export const ethRegistrarControllerCommitSnippet = [
-  ...ethRegistrarControllerErrors,
+export const registrarControllerCommitSnippet = [
+  ...registrarControllerErrors,
   {
     inputs: [
       {
@@ -234,8 +234,8 @@ export const ethRegistrarControllerCommitSnippet = [
   },
 ] as const
 
-export const ethRegistrarControllerCommitmentsSnippet = [
-  ...ethRegistrarControllerErrors,
+export const registrarControllerCommitmentsSnippet = [
+  ...registrarControllerErrors,
   {
     inputs: [
       {
@@ -257,8 +257,8 @@ export const ethRegistrarControllerCommitmentsSnippet = [
   },
 ] as const
 
-export const ethRegistrarControllerRegisterSnippet = [
-  ...ethRegistrarControllerErrors,
+export const registrarControllerRegisterSnippet = [
+  ...registrarControllerErrors,
   {
     inputs: [
       {
@@ -316,8 +316,8 @@ export const ethRegistrarControllerRegisterSnippet = [
   },
 ] as const
 
-export const ethRegistrarControllerRenewSnippet = [
-  ...ethRegistrarControllerErrors,
+export const registrarControllerRenewSnippet = [
+  ...registrarControllerErrors,
   {
     inputs: [
       {
@@ -343,7 +343,7 @@ export const ethRegistrarControllerRenewSnippet = [
   },
 ] as const
 
-export const ethRegistrarControllerNameRegisteredEventSnippet = [
+export const registrarControllerNameRegisteredEventSnippet = [
   {
     anonymous: false,
     inputs: [

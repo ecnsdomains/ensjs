@@ -1,4 +1,4 @@
-export const legacyEthRegistrarControllerAvailableSnippet = [
+export const legacyRegistrarControllerAvailableSnippet = [
   {
     constant: true,
     inputs: [{ internalType: 'string', name: 'name', type: 'string' }],
@@ -10,7 +10,7 @@ export const legacyEthRegistrarControllerAvailableSnippet = [
   },
 ] as const
 
-export const legacyEthRegistrarControllerCommitSnippet = [
+export const legacyRegistrarControllerCommitSnippet = [
   {
     constant: false,
     inputs: [{ internalType: 'bytes32', name: 'commitment', type: 'bytes32' }],
@@ -22,7 +22,7 @@ export const legacyEthRegistrarControllerCommitSnippet = [
   },
 ] as const
 
-export const legacyEthRegistrarControllerCommitmentsSnippet = [
+export const legacyRegistrarControllerCommitmentsSnippet = [
   {
     constant: true,
     inputs: [{ internalType: 'bytes32', name: '', type: 'bytes32' }],
@@ -34,7 +34,7 @@ export const legacyEthRegistrarControllerCommitmentsSnippet = [
   },
 ] as const
 
-export const legacyEthRegistrarControllerMakeCommitmentSnippet = [
+export const legacyRegistrarControllerMakeCommitmentSnippet = [
   {
     constant: true,
     inputs: [
@@ -50,7 +50,7 @@ export const legacyEthRegistrarControllerMakeCommitmentSnippet = [
   },
 ] as const
 
-export const legacyEthRegistrarControllerMakeCommitmentWithConfigSnippet = [
+export const legacyRegistrarControllerMakeCommitmentWithConfigSnippet = [
   {
     constant: true,
     inputs: [
@@ -68,7 +68,7 @@ export const legacyEthRegistrarControllerMakeCommitmentWithConfigSnippet = [
   },
 ] as const
 
-export const legacyEthRegistrarControllerRegisterSnippet = [
+export const legacyRegistrarControllerRegisterSnippet = [
   {
     constant: false,
     inputs: [
@@ -85,7 +85,7 @@ export const legacyEthRegistrarControllerRegisterSnippet = [
   },
 ] as const
 
-export const legacyEthRegistrarControllerRegisterWithConfigSnippet = [
+export const legacyRegistrarControllerRegisterWithConfigSnippet = [
   {
     constant: false,
     inputs: [
@@ -104,7 +104,7 @@ export const legacyEthRegistrarControllerRegisterWithConfigSnippet = [
   },
 ] as const
 
-export const legacyEthRegistrarControllerRenewSnippet = [
+export const legacyRegistrarControllerRenewSnippet = [
   {
     constant: false,
     inputs: [
@@ -119,7 +119,7 @@ export const legacyEthRegistrarControllerRenewSnippet = [
   },
 ] as const
 
-export const legacyEthRegistrarControllerRentPriceSnippet = [
+export const legacyRegistrarControllerRentPriceSnippet = [
   {
     constant: true,
     inputs: [
@@ -134,7 +134,7 @@ export const legacyEthRegistrarControllerRentPriceSnippet = [
   },
 ] as const
 
-export const legacyEthRegistrarControllerSupportsInterfaceSnippet = [
+export const legacyRegistrarControllerSupportsInterfaceSnippet = [
   {
     constant: true,
     inputs: [{ internalType: 'bytes4', name: 'interfaceID', type: 'bytes4' }],
@@ -146,7 +146,7 @@ export const legacyEthRegistrarControllerSupportsInterfaceSnippet = [
   },
 ] as const
 
-export const legacyEthRegistrarControllerTransferOwnershipSnippet = [
+export const legacyRegistrarControllerTransferOwnershipSnippet = [
   {
     constant: false,
     inputs: [{ internalType: 'address', name: 'newOwner', type: 'address' }],
@@ -158,7 +158,7 @@ export const legacyEthRegistrarControllerTransferOwnershipSnippet = [
   },
 ] as const
 
-export const legacyEthRegistrarControllerNameRegisteredEventSnippet = [
+export const legacyRegistrarControllerNameRegisteredEventSnippet = [
   {
     anonymous: false,
     inputs: [

@@ -1,6 +1,6 @@
 import { type Address, type Hex } from 'viem'
 import { describe, expect, it } from 'vitest'
-import { ethRegistrarControllerMakeCommitmentSnippet } from '../contracts/ethRegistrarController.js'
+import { registrarControllerMakeCommitmentSnippet } from '../contracts/registrarController.js'
 import { getChainContractAddress } from '../contracts/getChainContractAddress.js'
 import { publicClient } from '../test/addTestContracts.js'
 import { namehash } from './normalise.js'
@@ -53,7 +53,7 @@ describe('makeCommitment()', () => {
     const commitment = makeCommitment(parameters)
 
     const commitment2 = await publicClient.readContract({
-      abi: ethRegistrarControllerMakeCommitmentSnippet,
+      abi: registrarControllerMakeCommitmentSnippet,
       functionName: 'makeCommitment',
       address: getChainContractAddress({
         client: publicClient,

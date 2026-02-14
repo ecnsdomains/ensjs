@@ -6,8 +6,8 @@ import {
 } from 'viem'
 import { bulkRenewalRentPriceSnippet } from '../../contracts/bulkRenewal.js'
 import type { ClientWithEns } from '../../contracts/consts.js'
-import { ethRegistrarControllerRentPriceSnippet } from '../../contracts/ethRegistrarController.js'
 import { getChainContractAddress } from '../../contracts/getChainContractAddress.js'
+import { registrarControllerRentPriceSnippet } from '../../contracts/registrarController.js'
 import { UnsupportedNameTypeError } from '../../errors/general.js'
 import type { SimpleTransactionRequest } from '../../types.js'
 import {
@@ -81,7 +81,7 @@ const encode = (
       contract: 'ensEthRegistrarController',
     }),
     data: encodeFunctionData({
-      abi: ethRegistrarControllerRentPriceSnippet,
+      abi: registrarControllerRentPriceSnippet,
       functionName: 'rentPrice',
       args: [names[0], BigInt(duration)],
     }),
@@ -112,7 +112,7 @@ const decode = async (
   }
 
   return decodeFunctionResult({
-    abi: ethRegistrarControllerRentPriceSnippet,
+    abi: registrarControllerRentPriceSnippet,
     functionName: 'rentPrice',
     data,
   })

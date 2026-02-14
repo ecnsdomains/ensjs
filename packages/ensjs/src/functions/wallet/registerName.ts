@@ -7,8 +7,8 @@ import {
 } from 'viem'
 import { sendTransaction } from 'viem/actions'
 import type { ChainWithEns, ClientWithAccount } from '../../contracts/consts.js'
-import { ethRegistrarControllerRegisterSnippet } from '../../contracts/ethRegistrarController.js'
 import { getChainContractAddress } from '../../contracts/getChainContractAddress.js'
+import { registrarControllerRegisterSnippet } from '../../contracts/registrarController.js'
 import { UnsupportedNameTypeError } from '../../errors/general.js'
 import type {
   Prettify,
@@ -62,7 +62,7 @@ export const makeFunctionData = <
       contract: 'ensEthRegistrarController',
     }),
     data: encodeFunctionData({
-      abi: ethRegistrarControllerRegisterSnippet,
+      abi: registrarControllerRegisterSnippet,
       functionName: 'register',
       args: [makeRegistrationCallData(args)],
     }),

@@ -48,6 +48,7 @@ export {
   MAX_DATE_INT,
   MAX_INT_64,
   MINIMUM_DOT_ETH_CHARS,
+  MINIMUM_NATIVE_TLD_CHARS,
 } from './consts.js'
 export {
   ChildFuseKeys,
@@ -138,6 +139,7 @@ export {
 } from './registerHelpers.js'
 export {
   checkIsDotEth,
+  checkIsNativeTld2LD,
   parseInput,
   validateName,
   type ParsedInputResult,

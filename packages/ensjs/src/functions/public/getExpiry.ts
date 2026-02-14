@@ -24,7 +24,7 @@ import {
 } from '../../utils/generateFunction.js'
 import { makeSafeSecondsDate } from '../../utils/makeSafeSecondsDate.js'
 import { namehash } from '../../utils/normalise.js'
-import { checkIsDotEth } from '../../utils/validation.js'
+import { checkIsNativeTld2LD } from '../../utils/validation.js'
 import multicallWrapper from './multicallWrapper.js'
 
 type ContractOption = 'registrar' | 'nameWrapper'
@@ -51,7 +51,7 @@ const getContractToUse = (
   labels: string[],
 ) => {
   if (contract) return contract
-  if (checkIsDotEth(labels)) {
+  if (checkIsNativeTld2LD(labels)) {
     return 'registrar'
   }
   return 'nameWrapper'

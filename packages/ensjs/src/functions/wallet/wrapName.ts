@@ -28,7 +28,7 @@ import {
   encodeFuses,
 } from '../../utils/fuses.js'
 import { packetToBytes } from '../../utils/hexEncodedName.js'
-import { checkIsDotEth } from '../../utils/validation.js'
+import { checkIsNativeTld2LD } from '../../utils/validation.js'
 import { wrappedLabelLengthCheck } from '../../utils/wrapper.js'
 
 export type WrapNameDataParameters<
@@ -78,7 +78,7 @@ export const makeFunctionData = <
   }: WrapNameDataParameters<TName>,
 ): WrapNameDataReturnType => {
   const labels = name.split('.')
-  const isEth2ld = checkIsDotEth(labels)
+  const isEth2ld = checkIsNativeTld2LD(labels)
 
   const nameWrapperAddress = getChainContractAddress({
     client: wallet,

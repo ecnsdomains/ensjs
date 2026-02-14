@@ -7,7 +7,16 @@ type ChainContract = {
   blockCreated?: number
 }
 
-export const supportedChains = [mainnet.id, sepolia.id] as const
+// ETC chain IDs (not in viem/chains by default)
+const MORDOR_CHAIN_ID = 63 as const
+const CLASSIC_CHAIN_ID = 61 as const
+
+export const supportedChains = [
+  mainnet.id,
+  sepolia.id,
+  MORDOR_CHAIN_ID,
+  CLASSIC_CHAIN_ID,
+] as const
 export const supportedContracts = [
   'ensBaseRegistrarImplementation',
   'ensBulkRenewal',
@@ -131,6 +140,109 @@ export const addresses = {
       address: '0x0CeEC524b2807841739D3B5E161F5bf1430FFA48',
     },
   },
+  // ECNS Mordor Testnet (ETC testnet, chain 63)
+  // Deployed: 2026-02-06
+  [MORDOR_CHAIN_ID]: {
+    ensBaseRegistrarImplementation: {
+      address: '0x4d5e3a1e5dfbc98783ecbc91e6be2233fbf2978e',
+    },
+    ensBulkRenewal: {
+      address: '0x0000000000000000000000000000000000000000',
+    },
+    ensDnsRegistrar: {
+      address: '0x0000000000000000000000000000000000000000',
+    },
+    ensDnssecImpl: {
+      address: '0x0000000000000000000000000000000000000000',
+    },
+    ensEthRegistrarController: {
+      address: '0x13ff083bfd8377ea8e5a013e58662132cdb78ecb',
+    },
+    ensNameWrapper: {
+      address: '0x0000000000000000000000000000000000000000',
+    },
+    ensPublicResolver: {
+      address: '0xf8ee21672f4077354091aa5b1a147fde25ae81bc',
+    },
+    ensRegistry: {
+      address: '0x298195a795a5fe91bb47db1c4e501f07767775c8',
+    },
+    ensReverseRegistrar: {
+      address: '0xab9ffcf5ccaaf0f276a7c9813d57a8418e7e9f6a',
+    },
+    ensDefaultReverseRegistrar: {
+      address: '0xe5230571856f9e4a15f5e9c4655b220b32a081b1',
+    },
+    ensUniversalResolver: {
+      address: '0x0000000000000000000000000000000000000000',
+    },
+    wrappedEthRegistrarController: {
+      address: '0x0000000000000000000000000000000000000000',
+    },
+    wrappedPublicResolver: {
+      address: '0x0000000000000000000000000000000000000000',
+    },
+    wrappedBulkRenewal: {
+      address: '0x0000000000000000000000000000000000000000',
+    },
+    legacyEthRegistrarController: {
+      address: '0x0000000000000000000000000000000000000000',
+    },
+    legacyPublicResolver: {
+      address: '0x0000000000000000000000000000000000000000',
+    },
+  },
+  // ECNS ETC Mainnet (chain 61) - Pending deployment
+  [CLASSIC_CHAIN_ID]: {
+    ensBaseRegistrarImplementation: {
+      address: '0x0000000000000000000000000000000000000000',
+    },
+    ensBulkRenewal: {
+      address: '0x0000000000000000000000000000000000000000',
+    },
+    ensDnsRegistrar: {
+      address: '0x0000000000000000000000000000000000000000',
+    },
+    ensDnssecImpl: {
+      address: '0x0000000000000000000000000000000000000000',
+    },
+    ensEthRegistrarController: {
+      address: '0x0000000000000000000000000000000000000000',
+    },
+    ensNameWrapper: {
+      address: '0x0000000000000000000000000000000000000000',
+    },
+    ensPublicResolver: {
+      address: '0x0000000000000000000000000000000000000000',
+    },
+    ensRegistry: {
+      address: '0x0000000000000000000000000000000000000000',
+    },
+    ensReverseRegistrar: {
+      address: '0x0000000000000000000000000000000000000000',
+    },
+    ensDefaultReverseRegistrar: {
+      address: '0x0000000000000000000000000000000000000000',
+    },
+    ensUniversalResolver: {
+      address: '0x0000000000000000000000000000000000000000',
+    },
+    wrappedEthRegistrarController: {
+      address: '0x0000000000000000000000000000000000000000',
+    },
+    wrappedPublicResolver: {
+      address: '0x0000000000000000000000000000000000000000',
+    },
+    wrappedBulkRenewal: {
+      address: '0x0000000000000000000000000000000000000000',
+    },
+    legacyEthRegistrarController: {
+      address: '0x0000000000000000000000000000000000000000',
+    },
+    legacyPublicResolver: {
+      address: '0x0000000000000000000000000000000000000000',
+    },
+  },
 } as const satisfies Record<
   SupportedChain,
   Record<SupportedContract, { address: Address }>
@@ -151,6 +263,17 @@ export const subgraphs = {
   11155111: {
     ens: {
       url: 'https://api.studio.thegraph.com/query/49574/enssepolia/version/latest',
+    },
+  },
+  // ECNS chains - no subgraph, direct RPC queries only
+  [MORDOR_CHAIN_ID]: {
+    ens: {
+      url: '',
+    },
+  },
+  [CLASSIC_CHAIN_ID]: {
+    ens: {
+      url: '',
     },
   },
 } as const satisfies Record<SupportedChain, Subgraphs>

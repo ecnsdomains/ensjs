@@ -9,8 +9,8 @@ import {
 import { sendTransaction } from 'viem/actions'
 import { bulkRenewalRenewAllSnippet } from '../../contracts/bulkRenewal.js'
 import type { ChainWithEns, ClientWithAccount } from '../../contracts/consts.js'
-import { ethRegistrarControllerRenewSnippet } from '../../contracts/ethRegistrarController.js'
 import { getChainContractAddress } from '../../contracts/getChainContractAddress.js'
+import { registrarControllerRenewSnippet } from '../../contracts/registrarController.js'
 import { UnsupportedNameTypeError } from '../../errors/general.js'
 import type {
   Prettify,
@@ -78,7 +78,7 @@ export const makeFunctionData = <
         contract: 'ensEthRegistrarController',
       }),
       data: encodeFunctionData({
-        abi: ethRegistrarControllerRenewSnippet,
+        abi: registrarControllerRenewSnippet,
         functionName: 'renew',
         args: [labels[0], BigInt(duration), referrer],
       }),

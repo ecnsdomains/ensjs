@@ -1,4 +1,9 @@
 export {
+  DEFAULT_BRAND_CONFIG,
+  getChainBrandConfig,
+  type ChainBrandConfig,
+} from './config.js'
+export {
   ensPublicActions,
   type EnsPublicActions,
 } from './clients/decorators/public.js'

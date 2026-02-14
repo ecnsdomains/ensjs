@@ -1,5 +1,5 @@
 import { createEnsPublicClient } from '@ecnsdomains/ecnsjs'
-import { getName, getRecords, getOwner } from '@ecnsdomains/ecnsjs/public'
+import { getName, getOwner } from '@ecnsdomains/ecnsjs/public'
 import { http } from 'viem'
 import { defineChain } from 'viem'
 
@@ -63,7 +63,14 @@ const main = async () => {
     const recordsData = await client.getRecords({
       name: domainName,
       coins: ['ETC', 'ETH', 'BTC'],
-      texts: ['avatar', 'email', 'description', 'url', 'com.twitter', 'com.github'],
+      texts: [
+        'avatar',
+        'email',
+        'description',
+        'url',
+        'com.twitter',
+        'com.github',
+      ],
       contentHash: true,
     })
     console.log('Records:', recordsData)
@@ -76,12 +83,15 @@ const main = async () => {
       getOwner.batch({ name: domainName }),
     )
     console.log('Batch results:', batchData)
-
   } catch (error) {
     console.error('Error:', error.message)
     console.log()
-    console.log('Note: This example requires a registered .etc domain on Mordor testnet.')
-    console.log('Get METC from the faucet: https://github.com/mordortestnet/mordor-public-faucet')
+    console.log(
+      'Note: This example requires a registered .etc domain on Mordor testnet.',
+    )
+    console.log(
+      'Get METC from the faucet: https://github.com/mordortestnet/mordor-public-faucet',
+    )
   }
 }
 

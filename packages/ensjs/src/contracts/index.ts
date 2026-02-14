@@ -34,29 +34,29 @@ export {
 } from './dnssecImpl.js'
 export { erc165SupportsInterfaceSnippet } from './erc165.js'
 export {
-  ethRegistrarControllerCommitSnippet,
-  ethRegistrarControllerCommitmentsSnippet,
-  ethRegistrarControllerErrors,
-  ethRegistrarControllerRegisterSnippet,
-  ethRegistrarControllerRenewSnippet,
-  ethRegistrarControllerRentPriceSnippet,
-  ethRegistrarControllerNameRegisteredEventSnippet,
-} from './ethRegistrarController.js'
+  registrarControllerCommitSnippet,
+  registrarControllerCommitmentsSnippet,
+  registrarControllerErrors,
+  registrarControllerRegisterSnippet,
+  registrarControllerRenewSnippet,
+  registrarControllerRentPriceSnippet,
+  registrarControllerNameRegisteredEventSnippet,
+} from './registrarController.js'
 export { getChainContractAddress } from './getChainContractAddress.js'
 export {
-  legacyEthRegistrarControllerAvailableSnippet,
-  legacyEthRegistrarControllerCommitSnippet,
-  legacyEthRegistrarControllerCommitmentsSnippet,
-  legacyEthRegistrarControllerMakeCommitmentSnippet,
-  legacyEthRegistrarControllerMakeCommitmentWithConfigSnippet,
-  legacyEthRegistrarControllerRegisterSnippet,
-  legacyEthRegistrarControllerRegisterWithConfigSnippet,
-  legacyEthRegistrarControllerRenewSnippet,
-  legacyEthRegistrarControllerRentPriceSnippet,
-  legacyEthRegistrarControllerSupportsInterfaceSnippet,
-  legacyEthRegistrarControllerTransferOwnershipSnippet,
-  legacyEthRegistrarControllerNameRegisteredEventSnippet,
-} from './legacyEthRegistrarController.js'
+  legacyRegistrarControllerAvailableSnippet,
+  legacyRegistrarControllerCommitSnippet,
+  legacyRegistrarControllerCommitmentsSnippet,
+  legacyRegistrarControllerMakeCommitmentSnippet,
+  legacyRegistrarControllerMakeCommitmentWithConfigSnippet,
+  legacyRegistrarControllerRegisterSnippet,
+  legacyRegistrarControllerRegisterWithConfigSnippet,
+  legacyRegistrarControllerRenewSnippet,
+  legacyRegistrarControllerRentPriceSnippet,
+  legacyRegistrarControllerSupportsInterfaceSnippet,
+  legacyRegistrarControllerTransferOwnershipSnippet,
+  legacyRegistrarControllerNameRegisteredEventSnippet,
+} from './legacyRegistrarController.js'
 export {
   multicallGetCurrentBlockTimestampSnippet,
   multicallTryAggregateSnippet,

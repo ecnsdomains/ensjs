@@ -8,6 +8,7 @@ import {
   toBytes,
   toHex,
 } from 'viem'
+import { DEFAULT_BRAND_CONFIG } from '../config.js'
 import {
   CampaignReferenceTooLargeError,
   ResolverAddressRequiredError,
@@ -21,7 +22,7 @@ import { namehash } from './normalise.js'
 
 export enum ReverseRecordParameter {
   None = 0,
-  Ethereum = 1,
+  Chain = 1,
   Default = 2,
 }
 
@@ -42,6 +43,8 @@ export type RegistrationParameters = {
   reverseRecord?: ReverseRecordParameter
   /** Referrer for registration */
   referrer?: Hex
+  /** Native coin type for reverse record (SLIP44: 61 for ETC, 60 for ETH). Defaults to chain brand config. */
+  nativeCoinType?: number
 }
 
 export type RegistrationCallData = {
@@ -96,21 +99,24 @@ export const makeRegistrationCallData = ({
   reverseRecord,
   secret,
   referrer = '0x0000000000000000000000000000000000000000000000000000000000000000',
+  nativeCoinType = DEFAULT_BRAND_CONFIG.coinType,
 }: RegistrationParameters): RegistrationCallData => {
   const label = name.split('.')[0]
   const hash = namehash(name)
+  const nativeCoinKey = DEFAULT_BRAND_CONFIG.tld
 
   if (
     reverseRecord &&
     !coins.find(
       (c) =>
-        (typeof c.coin === 'string' && c.coin.toLowerCase() === 'eth') ||
+        (typeof c.coin === 'string' &&
+          c.coin.toLowerCase() === nativeCoinKey) ||
         (typeof c.coin === 'string'
-          ? Number.parseInt(c.coin) === 60
-          : c.coin === 60),
+          ? Number.parseInt(c.coin) === nativeCoinType
+          : c.coin === nativeCoinType),
     )
   ) {
-    coins.push({ coin: 60, value: owner })
+    coins.push({ coin: nativeCoinType, value: owner })
   }
 
   const data = records
