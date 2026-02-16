@@ -51,9 +51,9 @@ pnpm --filter mordor-basic start
 See [deployments/mordor.json](../../../contracts/deployments/mordor.json) for all deployed contract addresses.
 
 Key contracts:
-- **ECNSRegistry**: `0x29dd3a41973ec0551bcd195e46e8eb9801621c34`
-- **ETCRegistrarController**: `0x6d36c84926c2637448f2a7eabad3a0eed7f95b25`
-- **PublicResolver**: `0xc1267bafafd08fe85580985b020b2df08d863ca4`
+- **ECNSRegistry**: `0x298195a795a5fe91bb47db1c4e501f07767775c8`
+- **ETCRegistrarController**: `0x3daccff9a51a04ac01a09ba78919874536b34309`
+- **PublicResolver**: `0xa2d0c9a23729811607e09487cdd98dbb43e55f71`
 
 ## Important Limitations
 

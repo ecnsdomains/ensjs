@@ -141,10 +141,10 @@ export const addresses = {
     },
   },
   // ECNS Mordor Testnet (ETC testnet, chain 63)
-  // Deployed: 2026-02-06
+  // Deployed: 2026-02-08
   [MORDOR_CHAIN_ID]: {
     ensBaseRegistrarImplementation: {
-      address: '0x4d5e3a1e5dfbc98783ecbc91e6be2233fbf2978e',
+      address: '0x828efe05d833bd3e10a3086cf2df1c49bad0082f',
     },
     ensBulkRenewal: {
       address: '0x0000000000000000000000000000000000000000',
@@ -156,13 +156,13 @@ export const addresses = {
       address: '0x0000000000000000000000000000000000000000',
     },
     ensEthRegistrarController: {
-      address: '0x13ff083bfd8377ea8e5a013e58662132cdb78ecb',
+      address: '0x3daccff9a51a04ac01a09ba78919874536b34309',
     },
     ensNameWrapper: {
       address: '0x0000000000000000000000000000000000000000',
     },
     ensPublicResolver: {
-      address: '0xf8ee21672f4077354091aa5b1a147fde25ae81bc',
+      address: '0xa2d0c9a23729811607e09487cdd98dbb43e55f71',
     },
     ensRegistry: {
       address: '0x298195a795a5fe91bb47db1c4e501f07767775c8',
