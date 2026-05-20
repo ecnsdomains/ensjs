@@ -10,6 +10,16 @@ data/
 
 *.tsbuildinfo
 
-# Claude Code
+# Claude Code working directory (local only)
 .claude/
 **/.claude/
+CLAUDE.md
+
+# Internal development directory
+.local/
+
+SESSION_NOTES.md
+PLANNING.md
+SCRATCH.md
+*.scratch.*
+*.draft.*
